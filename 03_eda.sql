@@ -242,22 +242,18 @@ ORDER BY avg_rating DESC;
 -- avg_rating: Calidad media percibida por los usuarios
 -- total_votes: Nivel de engagement / popularidad
 
-/* Decisiones de negocio que permite tomar
- * Priorización de inversión
- * Si un tipo de contenido tiene alto rating medio, indica mayor calidad percibida.
- * Útil para decidir en qué formato producir o adquirir más contenido.
- *
- * Estrategia de catálogo
- * Comparar volumen vs calidad:
- * Mucho contenido pero bajo rating → posible saturación.
- * Poco contenido pero alto rating → oportunidad de expansión.
- *
- * Marketing y promoción
- * Tipos con muchos votos → alto engagement.
- * Ideales para campañas de visibilidad o posicionamiento.
- *
- * Optimización del portafolio
- * Detectar tipos con:
- * Bajo rating
- * Bajo engagement → candidatos a despriorizar o revisar calidad.
+/* Con esta Query podemos conseguir observar...
+ * - si un tipo de contenido tiene alto rating medio, indica mayor calidad percibida.
+ *   Útil para decidir en qué formato producir o adquirir más contenido
+ * 
+ * - la comparativa de volumen frente a la calidad.
+ *   Mucho contenido pero bajo rating -> posible saturación.
+ *   Poco contenido pero alto rating -> oportunidad de expansión.
+ * 
+ * - los tipos con muchos votos -> alto engagement.
+ *   Ideales para campañas de visibilidad o posicionamiento.
+ * 
+ * - y detectar tipos con bajo rating y bajo engagement (candidatos a despriorizar o revisar calidad).
  */
+
+

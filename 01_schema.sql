@@ -301,27 +301,3 @@ JOIN FACT_NAMES p ON tp.nconst = p.nconst
 JOIN FACT_TITLES t ON tp.tconst = t.tconst;
 
 
-
-
-
-
-
-
-
-
--- Vista pensada para análisis ejecutivo:
--- métricas clave por tipo de contenido
--- Permite evaluar qué tipo de contenido genera mayor engagement y calidad percibida
-CREATE VIEW IF NOT EXISTS vw_title_type_summary AS
-SELECT
-    t.title_type,
-    COUNT(DISTINCT t.tconst) AS total_titles,
-    ROUND(AVG(r.average_rating), 2) AS avg_rating,
-    SUM(r.num_votes) AS total_votes
-FROM FACT_TITLES t
-LEFT JOIN DIM_TITLE_RATINGS r
-    ON t.tconst = r.tconst
-GROUP BY t.title_type;
-
-
-
